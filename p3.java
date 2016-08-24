@@ -1,29 +1,25 @@
-import java.util.*;
-public class longest_prefix
+#include <iostream>
+using namespace std;
+
+int main()
 {
-public static void main(String ar[])throws Exception
-{
-Scanner sc=new Scanner(System.in);
-int n,j;
-n=sc.nextInt();
-String a[]=new String[100];
-for(int i=0;i<n;i++)
-{
-a[i]=sc.next();
-}
-String long,check;
-if(a.length>0)
-long=a[0];
-for(int i=1;i<a.length;i++)
-{
-check=a[i];
-for(j=0;j<Math.min(long.length(),a[i].length());j++)
-{
-if(long.charAt(j)!=check.charAt(j))
-break;
-}
-long=a[i].subString(0,j);
-}
-System.out.println("longest prefix is:"+long);
-}
+    int num,i,j,f=0;
+    char aos[1000][10000],s[100000];
+    cin>>num;
+    for(i=0;i<num;i++)
+    cin>>aos[i];
+    for(i=0;aos[0][i];i++){
+        for(j=1;aos[j][i];j++){
+            if(aos[j][i]!=aos[j-1][i]){
+                cout<<s;
+                f=1;
+                break;
+            }
+        }
+        if(f==1)
+        break;
+        else
+        s[i]=aos[0][i];
+    }
+    return 0;
 }
