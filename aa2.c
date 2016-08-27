@@ -2,26 +2,45 @@
 #include<conio.h>
 void main()
 {
-int array[100],n,i,j,store=0;
+int a,b,i[50],j[50],n,t;
 clrscr();
-printf("Enter the size of array\n");
-scanf("%d",&n);
-printf("enter the array element");
-for(i=0;i<n;i++)
+scanf("\n %d",&n);
+for(a=0;a<n;i++)
 {
-scanf("%d",&array[i]);
+scanf("\n %d",&i[a]);
+i[a]=j[a];
 }
-for(i=0;i<n;i++)
-for(j=i+1;j<n;j++)
+for(b=0;b<n;b++)
 {
-if(array[i]<array[j])
+scanf("\n %d",&i[b]);
+}
+for(a=0;a<n;a++)
 {
-store=array[i];
-array[i]=array[j];
-array[j]=temp;
+for(b=0;b<n;b++)
+{
+if(j[a]>j[b])
+{
+t=i[a];
+i[a]=i[b];
+i[b]=t;
+t=j[a];
+j[a]=j[b];
+j[b]=t;
+}
+else if(j[a]==j[j+1])
+{
+if(i[a]>i[b])
+{
+t=i[a];
+i[a]=i[b];
+i[b]=t;
 }
 }
-for(i=0;i<n;i++)
-printf("%d\n",array[i]);
+}
+}
+for(a=0;a<n;a++)
+{
+printf("\n %d",i[a]);
+}
 getch();
 }
